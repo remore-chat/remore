@@ -32,11 +32,11 @@ namespace Remore.Server
         }
         public static bool SendAsJson(this WatsonTcpServer server, Guid guid, IPacket packet, Dictionary<string, object> metadata = null)
         {
-            return server.Send(guid, JsonSerializer.Serialize(packet), metadata);
+            return server.Send(guid, JsonSerializer.Serialize((object)packet), metadata);
         }
         public static SyncResponse SendAndWaitJson(this WatsonTcpServer server, int timeoutMs, Guid guid, IPacket packet, Dictionary<string, object> metadata = null)
         {
-            return server.SendAndWait(timeoutMs, guid, JsonSerializer.Serialize(packet), metadata);
+            return server.SendAndWait(timeoutMs, guid, JsonSerializer.Serialize((object)packet), metadata);
         }
     }
 }

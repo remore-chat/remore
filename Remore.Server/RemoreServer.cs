@@ -15,6 +15,12 @@ internal class RemoreServer
         _connectedClients = new();
         _tcpServer = new WatsonTcpServer("127.0.0.1", 9000);
         _tcpServer.Events.ClientConnected += OnClientConnected;
+        _tcpServer.Events.MessageReceived += OnMessageReceived;
+    }
+
+    private void OnMessageReceived(object? sender, MessageReceivedEventArgs e)
+    {
+        throw new NotImplementedException();
     }
 
     private void OnClientConnected(object? sender, ConnectionEventArgs e)
