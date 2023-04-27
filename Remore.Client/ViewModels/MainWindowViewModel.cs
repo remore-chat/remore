@@ -27,6 +27,7 @@ namespace Remore.Client.ViewModels
             });
         }
 
+        //TODO: Move all code into separate class
         private async Task Connect()
         {
             WatsonTcpClient client = new WatsonTcpClient("127.0.0.1", 9000);
