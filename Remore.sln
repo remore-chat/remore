@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remore.Server", "Remore.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remore.Shared", "Remore.Shared\Remore.Shared.csproj", "{FB2AE976-06B8-400F-B62C-A620227C2AAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remore.Client", "Remore.Client\Remore.Client.csproj", "{3B0EF6FB-E3AE-4ABF-BBFE-2CB9E11B8D4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FB2AE976-06B8-400F-B62C-A620227C2AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB2AE976-06B8-400F-B62C-A620227C2AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB2AE976-06B8-400F-B62C-A620227C2AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0EF6FB-E3AE-4ABF-BBFE-2CB9E11B8D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0EF6FB-E3AE-4ABF-BBFE-2CB9E11B8D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0EF6FB-E3AE-4ABF-BBFE-2CB9E11B8D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0EF6FB-E3AE-4ABF-BBFE-2CB9E11B8D4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
