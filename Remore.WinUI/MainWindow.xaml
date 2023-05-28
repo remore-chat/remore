@@ -1,0 +1,36 @@
+﻿<windowex:WindowEx
+    x:Class="Remore.WinUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Remore.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:windowex="using:WinUIEx"
+    MinWidth="500"
+    MinHeight="500"
+    PersistenceId="MainWindow"
+    mc:Ignorable="d">
+    <Window.SystemBackdrop>
+        <MicaBackdrop/>
+    </Window.SystemBackdrop>
+
+    <Window.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid x:Name="AppTitleBar" Padding="12 0 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0" x:Name="Icon" />
+                    <ColumnDefinition Width="Auto" x:Name="Name" />
+                    <ColumnDefinition Width="*" x:Name="DragColumn" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" />
+                <TextBlock Text="Remore" Grid.Column="1" VerticalAlignment="Center"></TextBlock>
+                <Grid Grid.Column="2"></Grid>
+            </Grid>
+            <Frame Grid.Row="1" x:Name="contentFrame"></Frame>
+        </Grid>
+    </Window.Content>
+</windowex:WindowEx>

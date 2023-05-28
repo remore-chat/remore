@@ -6,6 +6,8 @@
 # User-specific files
 *.rsuser
 *.suo
+appsettings.json
+appsettings.Development.json
 *.user
 *.userosscache
 *.sln.docstates

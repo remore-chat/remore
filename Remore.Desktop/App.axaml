@@ -1,0 +1,13 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:Remore.Desktop"
+             x:Class="Remore.Desktop.App"
+			 xmlns:sty="using:FluentAvalonia.Styling">
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+		<sty:FluentAvaloniaTheme />
+    </Application.Styles>
+</Application>
