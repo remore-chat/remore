@@ -18,24 +18,40 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
-        <Grid Background="#40000000" CornerRadius="12" Padding="24 0 24 0" Width="450" Height="300">
-			<StackPanel>
-				<TextBlock HorizontalAlignment="Center" Margin="0 12 0 0" FontSize="24" Text="Sign in"></TextBlock>
-				<TextBox FontSize="14" Text="{x:Bind ViewModel.Email, Mode=TwoWay}" PlaceholderText="E-Mail" Margin="0 36 0 0"></TextBox>
-                <PasswordBox Password="{x:Bind ViewModel.Password, Mode=TwoWay}"  FontSize="14" PlaceholderText="Password" Margin="0 16 0 0"></PasswordBox>
-				<HyperlinkButton Margin="0 0 0 0" HorizontalAlignment="Right">Forgot password?</HyperlinkButton>
-                <Button IsEnabled="{x:Bind ViewModel.IsLoaded}" Style="{StaticResource AccentButtonStyle}" Command="{x:Bind ViewModel.SignInCommand}" Margin="0 12 0 0"  HorizontalAlignment="Stretch">
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
-                        <ProgressRing Foreground="White" Width="12" Height="12" Margin="-16 0 12 0" Visibility="{x:Bind ViewModel.IsLoading, Mode=OneWay, Converter={StaticResource boolToVis}}" />
-                        <TextBlock Text="Sign In" />
-                    </StackPanel>
-                </Button>
-				<StackPanel Margin="0 12 0 0" Orientation="Horizontal" HorizontalAlignment="Stretch">
-					<TextBlock VerticalAlignment="Center" Foreground="#b7b6b5">Need an account?</TextBlock>
-					<HyperlinkButton Margin="6 0 0 0">Sign up</HyperlinkButton>
-				</StackPanel>
-			</StackPanel>
-        </Grid>
+        <StackPanel VerticalAlignment="Center">
+            <InfoBar IsOpen="{x:Bind ViewModel.HasErrors, Mode=OneWay}"
+                     Visibility="{x:Bind ViewModel.HasErrors, Mode=OneWay, Converter={StaticResource boolToVis}}"
+                     HorizontalAlignment="Stretch"
+                     Width="400"
+                     Margin="0 -120 0 0"
+                     Height="120"
+                     IsClosable="False"
+                     Title="Oops..."
+                     Severity="Error"
+                     >
+                <InfoBar.Content>
+                    <TextBlock Text="{x:Bind ViewModel.Errors, Mode=OneWay}" Margin="0 0 0 16"></TextBlock>
+                </InfoBar.Content>
+            </InfoBar> 
+            <Grid Background="#40000000" Margin="0 24 0 0" CornerRadius="12" Padding="24 0 24 0" Width="450" Height="300">
+			    <StackPanel>
+				    <TextBlock HorizontalAlignment="Center" Margin="0 12 0 0" FontSize="24" Text="Sign in"></TextBlock>
+				    <TextBox FontSize="14" Text="{x:Bind ViewModel.Email, Mode=TwoWay}" PlaceholderText="E-Mail" Margin="0 36 0 0"></TextBox>
+                    <PasswordBox Password="{x:Bind ViewModel.Password, Mode=TwoWay}"  FontSize="14" PlaceholderText="Password" Margin="0 16 0 0"></PasswordBox>
+				    <HyperlinkButton Margin="0 0 0 0" HorizontalAlignment="Right">Forgot password?</HyperlinkButton>
+                    <Button IsEnabled="{x:Bind ViewModel.IsLoaded}" Style="{StaticResource AccentButtonStyle}" Command="{x:Bind ViewModel.SignInCommand}" Margin="0 12 0 0"  HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                            <ProgressRing Foreground="White" Width="12" Height="12" Margin="-16 0 12 0" Visibility="{x:Bind ViewModel.IsLoading, Mode=OneWay, Converter={StaticResource boolToVis}}" />
+                            <TextBlock Text="Sign In" />
+                        </StackPanel>
+                    </Button>
+				    <StackPanel Margin="0 12 0 0" Orientation="Horizontal" HorizontalAlignment="Stretch">
+					    <TextBlock VerticalAlignment="Center" Foreground="#b7b6b5">Need an account?</TextBlock>
+					    <HyperlinkButton Margin="6 0 0 0">Sign up</HyperlinkButton>
+				    </StackPanel>
+			    </StackPanel>
+            </Grid>
+        </StackPanel>
         
     </Grid>
 </Page>

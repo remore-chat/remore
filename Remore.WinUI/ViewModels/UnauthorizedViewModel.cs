@@ -26,6 +26,7 @@ public partial class UnauthorizedViewModel : ObservableRecipient
     public bool HasErrors => _errors != null;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(HasErrors))]
     private string _errors = null;
 
     [ObservableProperty]
@@ -38,6 +39,7 @@ public partial class UnauthorizedViewModel : ObservableRecipient
     public async Task SignInAsync()
     {
         App.DispatcherQueue.TryEnqueue(() => { IsLoading = true; Errors = null; });
+        await Task.Delay(1500);
         var errors = await _authService.SignInAsync(_email, _password);
         if (errors == null)
         {
